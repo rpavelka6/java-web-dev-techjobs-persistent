@@ -28,7 +28,7 @@ public class SkillController {
 
     @PostMapping("add")
     public String processAddSkillForm(@ModelAttribute @Valid Skill newSkill,
-                                         Errors errors, Model model) {
+                                      Errors errors, Model model) {
 
         if (errors.hasErrors()) {
             return "skills/add";
@@ -47,7 +47,7 @@ public class SkillController {
             model.addAttribute("skill", skill);
             return "skills/view";
         } else {
-            model.addAttribute("title", "Invalid Skill Id: " + skillId);
+            model.addAttribute("employer", skillRepository.findAll());
             return "redirect:../";
         }
     }
