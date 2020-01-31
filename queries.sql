@@ -1,7 +1,15 @@
-## Part 1: Test it with SQL
+SHOW fields from job;
 
-## Part 2: Test it with SQL
+Select name           
+FROM employer 
+WHERE location = "St. Louis City";
 
-## Part 3: Test it with SQL
+DROP table job;
 
-## Part 4: Test it with SQL
+SELECT name, description FROM skill
+WHERE skill.id IN (SELECT skills_id FROM job_skills WHERE skills_id IS NOT NULL)
+ORDER BY name desc;
+
+
+
+  

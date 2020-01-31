@@ -13,7 +13,7 @@ public class Job extends AbstractEntity {
     private Employer employer;
 
     @ManyToMany
-    @JoinColumn
+//    @JoinColumn
     @NotNull(message = "Skill is required")
     private List<Skill> skills = new ArrayList<>();
 

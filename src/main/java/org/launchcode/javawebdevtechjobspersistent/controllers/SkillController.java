@@ -44,10 +44,10 @@ public class SkillController {
         Optional optSkill = skillRepository.findById(skillId);
         if (optSkill.isPresent()) {
             Skill skill = (Skill) optSkill.get();
-            model.addAttribute("skill", skill);
+            model.addAttribute("skills", skill);
             return "skills/view";
         } else {
-            model.addAttribute("employer", skillRepository.findAll());
+            model.addAttribute("skills", skillRepository.findAll());
             return "redirect:../";
         }
     }
